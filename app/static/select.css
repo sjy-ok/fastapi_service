@@ -1,0 +1,9 @@
+.remote-select { position: relative; }
+.remote-select > input { width: 100%; padding-right: 38px; }
+.select-toggle { position: absolute; right: 1px; top: 1px; width: 36px; height: 36px; border: 0; border-left: 1px solid #e5e8ef; background: #fff; color: #778298; border-radius: 0 8px 8px 0; cursor: pointer; font-size: 17px; }
+.select-menu { position: absolute; z-index: 40; left: 0; right: 0; top: calc(100% + 5px); max-height: 230px; overflow: auto; background: #fff; border: 1px solid #dfe3eb; border-radius: 9px; box-shadow: 0 14px 35px rgba(20,31,58,.16); padding: 5px; }
+.select-option { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; border: 0; background: #fff; border-radius: 6px; padding: 9px 10px; text-align: left; color: #354057; cursor: pointer; }
+.select-option:hover, .select-option:focus { background: #edf2ff; color: #244bd6; }
+.select-option strong { font-size: 13px; font-weight: 600; }
+.select-option small { font-size: 10px; color: #98a1b2; }
+.select-empty { padding: 13px; text-align: center; color: #98a1b2; font-size: 12px; }

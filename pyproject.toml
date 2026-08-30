@@ -1,0 +1,31 @@
+[project]
+name = "fastapi-service"
+version = "0.1.0"
+description = "FastAPI MVP backend"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[standard]",
+    "pydantic-settings",
+    "sqlalchemy[asyncio]",
+    "asyncpg",
+    "httpx",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "ruff", "aiosqlite"]
+
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = [".tmp"]

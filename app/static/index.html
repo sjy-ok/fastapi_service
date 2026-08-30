@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人员管理台</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/select.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">P</span><div><strong>People</strong><small>人员管理台</small></div></div>
+      <nav id="navigation">
+        <button class="nav-item active" data-page="assignments"><span>◫</span>人员变动</button>
+        <button class="nav-item" data-page="personnels"><span>人</span>人员</button>
+        <button class="nav-item" data-page="tm-groups"><span>T</span>TM</button>
+        <button class="nav-item" data-page="pl-groups"><span>P</span>PL</button>
+        <button class="nav-item" data-page="departments"><span>D</span>Department</button>
+        <a class="nav-item" href="/docs" target="_blank"><span>↗</span>API 文档</a>
+      </nav>
+      <div class="sidebar-foot"><i></i><span>服务运行正常</span></div>
+    </aside>
+
+    <main>
+      <header>
+        <div><p class="eyebrow">WORKFORCE / RECORDS</p><h1 id="pageTitle">人员变动</h1><p class="subtitle" id="pageSubtitle">维护人员组织变动记录</p></div>
+        <button class="primary" id="createButton"><span>＋</span> 新增记录</button>
+      </header>
+
+      <section class="stats">
+        <article><span class="stat-icon blue">记</span><div><small>变动记录</small><strong id="assignmentCount">—</strong><em>全部业务记录</em></div></article>
+        <article><span class="stat-icon green">人</span><div><small>人员</small><strong id="personnelCount">—</strong><em>人员基础数据</em></div></article>
+        <article><span class="stat-icon amber">组</span><div><small>TM / PL</small><strong id="groupCount">—</strong><em>组织基础数据</em></div></article>
+        <article><span class="stat-icon violet">部</span><div><small>部门</small><strong id="departmentCount">—</strong><em>部门基础数据</em></div></article>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <div class="search"><span>⌕</span><input id="searchInput" placeholder="搜索当前列表"></div>
+          <button class="ghost" id="refreshButton">↻ 刷新</button>
+        </div>
+        <div class="table-wrap">
+          <table><thead id="tableHead"></thead><tbody id="dataTable"><tr><td class="empty">正在载入数据…</td></tr></tbody></table>
+        </div>
+        <div class="panel-foot"><span id="resultCount">共 0 人</span><span>数据来自 FastAPI 服务</span></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal">
+      <button class="modal-close" data-close>×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast hidden" id="toast"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
